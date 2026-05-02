@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CORAL SEA AI動画 構成案B 絵コンテ｜株式会社ランバード</title>
+<title>CORAL SEA AI動画 構成案B+A 絵コンテ｜株式会社ランバード</title>
 <style>
   :root {
     --ocean: #0099d4;
@@ -31,20 +31,12 @@
     position: relative;
     overflow: hidden;
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><circle cx='50' cy='50' r='2' fill='white' opacity='0.3'/></svg>");
-    opacity: 0.4;
-  }
   .hero h1 {
     font-size: 36px;
     margin-bottom: 12px;
-    position: relative;
     text-shadow: 0 2px 12px rgba(0,0,0,0.2);
   }
-  .hero p { font-size: 16px; opacity: 0.95; position: relative; }
+  .hero p { font-size: 16px; opacity: 0.95; }
   .hero .badge {
     display: inline-block;
     background: rgba(255,255,255,0.25);
@@ -53,7 +45,6 @@
     border-radius: 20px;
     font-size: 13px;
     margin-top: 16px;
-    position: relative;
   }
   .container {
     max-width: 1100px;
@@ -62,14 +53,14 @@
     position: relative;
     z-index: 2;
   }
-  .summary-card {
+  .summary-card, .materials, .ig-block, .competitor-block {
     background: #fff;
     border-radius: 16px;
     padding: 32px;
     box-shadow: 0 8px 32px rgba(0, 100, 200, 0.1);
     margin-bottom: 40px;
   }
-  .summary-card h2 {
+  .summary-card h2, .competitor-block h2 {
     color: var(--ocean-deep);
     font-size: 22px;
     border-left: 5px solid var(--ocean);
@@ -96,7 +87,6 @@
     color: var(--ocean-deep);
     margin: 60px 0 20px;
     text-align: center;
-    position: relative;
   }
   .section-title::after {
     content: '';
@@ -115,10 +105,7 @@
     font-weight: 400;
   }
 
-  .storyboard {
-    display: grid;
-    gap: 16px;
-  }
+  .storyboard { display: grid; gap: 16px; }
   .cut {
     background: #fff;
     border-radius: 14px;
@@ -138,22 +125,10 @@
     flex-direction: column;
     justify-content: center;
   }
-  .cut .timeline .num {
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 1;
-  }
-  .cut .timeline .sec {
-    font-size: 11px;
-    margin-top: 6px;
-    opacity: 0.9;
-  }
+  .cut .timeline .num { font-size: 24px; font-weight: 800; line-height: 1; }
+  .cut .timeline .sec { font-size: 11px; margin-top: 6px; opacity: 0.9; }
   .cut .body { padding: 20px 24px; }
-  .cut .visual {
-    font-size: 14px;
-    color: var(--text);
-    margin-bottom: 12px;
-  }
+  .cut .visual { font-size: 14px; margin-bottom: 12px; }
   .cut .visual strong { color: var(--ocean-deep); }
   .cut .copy {
     background: var(--sand);
@@ -165,25 +140,23 @@
     color: #6b4500;
     margin-top: 10px;
   }
-  .cut .copy::before {
-    content: '💬 ';
-  }
-  .cut .note {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 8px;
-  }
+  .cut .copy::before { content: '💬 '; }
+  .cut .note { font-size: 12px; color: var(--muted); margin-top: 8px; }
   .cut.hook .timeline { background: linear-gradient(180deg, var(--coral), #c0392b); }
   .cut.cta .timeline { background: linear-gradient(180deg, var(--sun), #e67e22); }
   .cut.chill .timeline { background: linear-gradient(180deg, #00d4ff, var(--ocean)); }
-
-  .materials {
-    background: #fff;
-    border-radius: 16px;
-    padding: 32px;
-    box-shadow: 0 8px 32px rgba(0, 100, 200, 0.08);
-    margin-top: 30px;
+  .cut.usp .timeline { background: linear-gradient(180deg, #2ecc71, #16a085); }
+  .cut .a-tag {
+    display: inline-block;
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    font-weight: 700;
   }
+
   .materials h3 {
     color: var(--ocean-deep);
     font-size: 18px;
@@ -191,55 +164,32 @@
     border-left: 4px solid var(--coral);
     padding-left: 12px;
   }
-  .materials table {
+  .materials table, .competitor-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 24px;
     font-size: 13px;
   }
-  .materials th {
+  .materials th, .competitor-table th {
     background: linear-gradient(90deg, var(--ocean) 0%, var(--ocean-deep) 100%);
     color: #fff;
     padding: 10px 12px;
     text-align: left;
     font-size: 12px;
   }
-  .materials td {
+  .materials td, .competitor-table td {
     padding: 10px 12px;
     border-bottom: 1px solid var(--border);
     vertical-align: top;
   }
-  .materials tr:nth-child(even) td { background: #fafdff; }
-  .badge-must {
-    background: var(--coral);
-    color: #fff;
-    font-size: 10px;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-weight: 700;
-  }
-  .badge-want {
-    background: #2ecc71;
-    color: #fff;
-    font-size: 10px;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-weight: 700;
-  }
+  .materials tr:nth-child(even) td, .competitor-table tr:nth-child(even) td { background: #fafdff; }
+  .badge-must { background: var(--coral); color: #fff; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 700; }
+  .badge-want { background: #2ecc71; color: #fff; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 700; }
+  .badge-win { background: linear-gradient(45deg, #ff6b6b, #ffb84d); color: #fff; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 700; }
+  .badge-lose { background: #95a5a6; color: #fff; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 700; }
 
-  .ig-block {
-    background: #fff;
-    border-radius: 16px;
-    padding: 32px;
-    box-shadow: 0 8px 32px rgba(0, 100, 200, 0.08);
-    margin-top: 30px;
-    text-align: center;
-  }
-  .ig-block h3 {
-    color: var(--ocean-deep);
-    font-size: 18px;
-    margin-bottom: 12px;
-  }
+  .ig-block { text-align: center; }
+  .ig-block h3 { color: var(--ocean-deep); font-size: 18px; margin-bottom: 12px; }
   .ig-block a {
     display: inline-block;
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
@@ -249,7 +199,6 @@
     text-decoration: none;
     font-weight: 700;
     margin-top: 16px;
-    box-shadow: 0 4px 16px rgba(220, 39, 67, 0.3);
   }
   .ig-grid {
     display: grid;
@@ -292,11 +241,7 @@
   }
   .variant.bumper { border-top-color: var(--coral); }
   .variant.short { border-top-color: var(--sun); }
-  .variant h4 {
-    color: var(--ocean-deep);
-    margin-bottom: 6px;
-    font-size: 16px;
-  }
+  .variant h4 { color: var(--ocean-deep); margin-bottom: 6px; font-size: 16px; }
   .variant .duration {
     display: inline-block;
     background: var(--bg);
@@ -308,6 +253,15 @@
     margin-bottom: 10px;
   }
   .variant p { font-size: 13px; color: var(--muted); }
+
+  .insight-box {
+    background: linear-gradient(135deg, #fff 0%, #fff7e6 100%);
+    border-left: 5px solid var(--sun);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 16px 0 24px;
+  }
+  .insight-box strong { color: #b67800; }
 
   .next-steps {
     background: linear-gradient(135deg, var(--ocean-deep), var(--ocean));
@@ -326,18 +280,13 @@
   }
   .next-steps li { margin-bottom: 10px; font-size: 14px; }
 
-  footer {
-    text-align: center;
-    padding: 30px 20px;
-    color: var(--muted);
-    font-size: 12px;
-  }
+  footer { text-align: center; padding: 30px 20px; color: var(--muted); font-size: 12px; }
 
   @media (max-width: 640px) {
     .hero h1 { font-size: 26px; }
     .cut { grid-template-columns: 70px 1fr; }
     .cut .body { padding: 16px; }
-    .summary-card, .materials, .ig-block, .next-steps { padding: 24px 18px; }
+    .summary-card, .materials, .ig-block, .competitor-block, .next-steps { padding: 24px 18px; }
   }
 </style>
 </head>
@@ -345,7 +294,7 @@
 
 <div class="hero">
   <h1>🌊 CORAL SEA / 株式会社MLO</h1>
-  <p>AI動画 構成案B「沖縄旅行のあるあるYES/NO」型 — 絵コンテ＆素材リスト</p>
+  <p>AI動画 構成案B+A ハイブリッド版 — 絵コンテ・素材リスト・競合分析</p>
   <div class="badge">認知拡大広告 ／ 30秒メイン + 6秒バンパー + 15秒短尺</div>
 </div>
 
@@ -360,9 +309,84 @@
       <div><div class="k">屋号</div><div class="v">CORAL SEA</div></div>
       <div><div class="k">運営</div><div class="v">株式会社MLO</div></div>
       <div><div class="k">店舗数</div><div class="v">3店舗</div></div>
-      <div><div class="k">主訴求</div><div class="v">透明な海×派手アクション×笑顔</div></div>
-      <div><div class="k">キーUSP</div><div class="v">GoPro撮影データ無料</div></div>
-      <div><div class="k">ターゲット</div><div class="v">沖縄観光客（家族・カップル・友達）</div></div>
+      <div><div class="k">主訴求</div><div class="v">海×アクション×笑顔×安心</div></div>
+      <div><div class="k">最強USP</div><div class="v" style="color:var(--coral);">GoPro撮影データ無料</div></div>
+      <div><div class="k">ターゲット</div><div class="v">家族・カップル・友達観光客</div></div>
+    </div>
+  </div>
+
+  <!-- ============ 競合調査 ============ -->
+  <div class="competitor-block">
+    <h2>🔍 沖縄マリンスポーツ 競合動画／訴求調査</h2>
+    <p>主要競合各社の訴求・価格・撮影サービスを調査。<strong>「GoPro撮影データ完全無料」は明確な差別化ポイント</strong>であることが判明。</p>
+
+    <table class="competitor-table">
+      <thead>
+        <tr>
+          <th>ショップ名</th>
+          <th>主訴求</th>
+          <th>価格帯</th>
+          <th>撮影サービス</th>
+          <th>動画広告の傾向</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background:#fff7e6 !important;">
+          <td><strong>CORAL SEA</strong><br>（自社）</td>
+          <td>陽気なスタッフ／<br>多彩なメニュー</td>
+          <td>¥4,000〜<br>¥20,000</td>
+          <td><span class="badge-win">完全無料</span><br>GoProデータ</td>
+          <td>未着手（今回新規）</td>
+        </tr>
+        <tr>
+          <td>COCO MARINE<br>（宜野湾・直接競合）</td>
+          <td>「この夏最高の思い出」<br>家族連れ・初心者対応</td>
+          <td>非公開</td>
+          <td><span class="badge-lose">記載なし</span></td>
+          <td>HP動画あり・抒情的</td>
+        </tr>
+        <tr>
+          <td>アクアマリン沖縄</td>
+          <td>「オリジナルボート」<br>インスタ映え</td>
+          <td>¥7,000〜<br>¥14,500</td>
+          <td>360°カメラ写真<br>無料</td>
+          <td>インスタ映え訴求多数</td>
+        </tr>
+        <tr>
+          <td>マリンショップアウル</td>
+          <td>初心者歓迎／<br>「足から噴射で大ジャンプ」</td>
+          <td>¥6,980〜<br>¥8,980</td>
+          <td><span class="badge-lose">なし</span></td>
+          <td>体験のドラマチック性</td>
+        </tr>
+        <tr>
+          <td>津堅島シークルーズ</td>
+          <td>透明度の海／<br>BBQセット</td>
+          <td>¥12,000〜</td>
+          <td><span class="badge-lose">なし</span></td>
+          <td>離島／プライベート感</td>
+        </tr>
+        <tr>
+          <td>マリンアイランド</td>
+          <td>「14種類遊び放題」<br>「県内最多級」</td>
+          <td>遊び放題プラン</td>
+          <td>有料オプション</td>
+          <td>多彩さ訴求</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="insight-box">
+      <strong>💡 競合分析からの3つの示唆：</strong><br><br>
+      <strong>1. GoPro撮影データ無料は強烈な差別化要素</strong><br>
+      ほとんどの競合は撮影サービス記載なし or 有料オプション。CORAL SEAは「無料プレゼント」を<u>動画の中で大々的に訴求すべき</u>。<br><br>
+
+      <strong>2. 「初心者歓迎」だけでは差別化できない</strong><br>
+      ほぼ全社が「初心者OK」を訴求しているため、それ単独では埋没。<br>
+      → A案要素「<u>初心者も、子どもも、はじめての沖縄も。</u>」のように、<strong>具体的な対象を3層で見せる</strong>のがベター。<br><br>
+
+      <strong>3. 「3店舗展開」は競合にない強み</strong><br>
+      宜野湾・中城・伊芸の3拠点は、観光ルート上の選択肢として競合の単店舗ショップに対して優位。動画ラスト3秒で<u>地図ピンと共に明示</u>すべき。
     </div>
   </div>
 
@@ -372,22 +396,22 @@
     <div class="variant bumper">
       <div class="duration">6秒</div>
       <h4>バンパー版</h4>
-      <p>YouTube バンパー広告用。<strong>フライボード打ち上げ＋ロゴ</strong>のみで認知刷り込み。スキップ不可なので一発勝負。</p>
+      <p>YouTube バンパー広告用。<strong>フライボード打ち上げ＋「撮影データ無料」＋ロゴ</strong>。スキップ不可。</p>
     </div>
     <div class="variant short">
       <div class="duration">15秒</div>
       <h4>ショート版</h4>
-      <p>Instagram/TikTokリール、YouTube ショート用。下記30秒構成のCUT 1〜5＋CTAだけに圧縮。</p>
+      <p>Instagram/TikTokリール、YouTube ショート用。下記30秒構成のCUT 1〜4＋7＋8に圧縮。</p>
     </div>
     <div class="variant">
       <div class="duration">30秒</div>
       <h4>メイン版</h4>
-      <p>YouTube インストリーム広告のメイン素材。下記絵コンテの全7カット構成。</p>
+      <p>YouTube インストリーム広告のメイン素材。下記絵コンテの全8カット構成。</p>
     </div>
   </div>
 
-  <!-- ============ 絵コンテ ============ -->
-  <h2 class="section-title">🎬 30秒メイン版 絵コンテ<small>左から「秒数 / 映像 / セリフ・テロップ」</small></h2>
+  <!-- ============ 絵コンテ（B+A統合版） ============ -->
+  <h2 class="section-title">🎬 30秒メイン版 絵コンテ（B+A統合版）<small>左から「秒数 / 映像 / セリフ・テロップ」</small></h2>
 
   <div class="storyboard">
 
@@ -405,7 +429,6 @@
       <div class="body">
         <div class="visual">🚀 <strong>フライボードで人が空中に打ち上げられる瞬間</strong>。スローモーション → 等速。水しぶきが派手に飛ぶカット。</div>
         <div class="copy">飛べるよ。</div>
-        <div class="note">テロップは画面下中央・大きく1単語。BGMはここでビート入り。</div>
       </div>
     </div>
 
@@ -420,36 +443,47 @@
     <div class="cut chill">
       <div class="timeline"><div class="num">CUT 4</div><div class="sec">9–12秒</div></div>
       <div class="body">
-        <div class="visual">🐠 <strong>シュノーケルで魚と泳ぐ水中映像</strong>。サンゴ・熱帯魚・差し込む光。ここで一旦テンポを落としてチル感。</div>
+        <div class="visual">🐠 <strong>シュノーケルで魚と泳ぐ水中映像</strong>。サンゴ・熱帯魚・差し込む光。テンポを落としてチル感。</div>
         <div class="copy">潜れるよ。</div>
         <div class="note">水中映像はGoProで撮影されたものがInstagramにあるはず。要素材確認。</div>
       </div>
     </div>
 
     <div class="cut chill">
-      <div class="timeline"><div class="num">CUT 5</div><div class="sec">12–18秒</div></div>
+      <div class="timeline"><div class="num">CUT 5</div><div class="sec">12–15秒</div></div>
       <div class="body">
-        <div class="visual">🍖 <strong>家族でBBQを楽しむ様子 → 夕日に染まる海のロングショット</strong>。チル感MAX。1日の余韻を見せる。</div>
-        <div class="copy">BBQも、夕日も、ぜんぶセット。</div>
-        <div class="note">BBQ機材レンタルあり（¥10,000）の訴求もここで効く。</div>
+        <div class="a-tag">A案要素統合</div>
+        <div class="visual">👨‍👩‍👧 <strong>家族3カット高速モンタージュ</strong>：①子どもがバナナボートで歓声 ②カップルがSUPで笑顔 ③お父さんが初挑戦でフライボード成功。3層を1.5秒×2で見せる。</div>
+        <div class="copy">初心者も、子どもも、はじめての沖縄も。</div>
+        <div class="note">競合分析からの示唆②：「初心者OK」を抽象的に言わず、3層を映像で具体化することで差別化。</div>
       </div>
     </div>
 
     <div class="cut">
-      <div class="timeline"><div class="num">CUT 6</div><div class="sec">18–25秒</div></div>
+      <div class="timeline"><div class="num">CUT 6</div><div class="sec">15–19秒</div></div>
       <div class="body">
         <div class="visual">🤝 <strong>陽気なスタッフがハイタッチでお客さまを迎える集合カット</strong>。笑顔・歓声。「個性豊かなメンバー」感を見せる。</div>
-        <div class="copy">初めてでも、スタッフが全部教えるから大丈夫。</div>
-        <div class="note">ヒアリング核「陽気なスタッフ」を最大化。スタッフ集合写真 or ハイタッチ動画が必須。</div>
+        <div class="copy">スタッフが、ぜんぶ教えるから大丈夫。</div>
+        <div class="note">ヒアリング核「陽気なスタッフ」を最大化。</div>
+      </div>
+    </div>
+
+    <div class="cut usp">
+      <div class="timeline"><div class="num">CUT 7</div><div class="sec">19–24秒</div></div>
+      <div class="body">
+        <div class="a-tag">A案要素統合 ＋ 競合差別化MAX</div>
+        <div class="visual">📸 <strong>スタッフが体験後のお客さまにGoProデータをスマホへエアドロ／QRで渡すカット</strong>。受け取った瞬間にお客さまが画面を見て大喜び。スマホ画面に空中ショット動画がチラッと映る。</div>
+        <div class="copy">撮影データは、ぜんぶ無料プレゼント。</div>
+        <div class="note">⭐ <strong>競合分析より：ここが最大の差別化ポイント</strong>。COCO MARINE・アウル・津堅島は撮影サービスなし。アクアマリンは360°カメラのみ。「ぜんぶ無料」は強い。</div>
       </div>
     </div>
 
     <div class="cut cta">
-      <div class="timeline"><div class="num">CUT 7</div><div class="sec">25–30秒</div></div>
+      <div class="timeline"><div class="num">CUT 8</div><div class="sec">24–30秒</div></div>
       <div class="body">
         <div class="visual">🏝️ <strong>ロゴ大写し＋3店舗（宜野湾／中城／伊芸）の地図ピン</strong>＋電話番号＋HP予約QRコード。背景は青い海。</div>
         <div class="copy">CORAL SEA ｜ 沖縄・宜野湾／中城／伊芸 ｜ TEL 098-963-8135</div>
-        <div class="note">QRコードを画面右下に常駐。最後の3秒は静止画OK。</div>
+        <div class="note">3店舗マップは「競合にない強み」のため、地図ピンを動きとともに表示。</div>
       </div>
     </div>
 
@@ -458,16 +492,16 @@
   <!-- ============ Instagram連携 ============ -->
   <div class="ig-block">
     <h3>📸 公式Instagram から素材ピックアップ</h3>
-    <p>下記のような投稿カテゴリから絵コンテに合う素材を抽出します（営業＋クライアントで選定）。</p>
+    <p>下記カテゴリから絵コンテに合う素材を抽出します（営業＋クライアントで選定）。</p>
     <a href="https://www.instagram.com/coralsea_okinawa/" target="_blank">@coralsea_okinawa を開く</a>
 
     <div class="ig-grid">
       <div class="ph">CUT 2用<br>フライボード<br>打ち上げ瞬間</div>
       <div class="ph">CUT 3用<br>ウェイク／<br>ホバーボード</div>
       <div class="ph">CUT 4用<br>シュノーケル<br>水中ショット</div>
-      <div class="ph">CUT 5用<br>BBQ・夕日<br>ファミリーシーン</div>
+      <div class="ph">CUT 5用<br>家族／子ども／<br>カップル</div>
       <div class="ph">CUT 6用<br>スタッフ笑顔<br>集合カット</div>
-      <div class="ph">CUT 1用<br>沖縄の海<br>空撮ロング</div>
+      <div class="ph">CUT 7用<br>GoProデータ<br>受け渡し</div>
     </div>
     <p style="margin-top:20px; font-size:13px; color:var(--muted);">※ Instagram投稿のうち、解像度・画質が広告転用に耐えるもの（縦2160px以上）を優先選定します。</p>
   </div>
@@ -483,13 +517,14 @@
       </thead>
       <tbody>
         <tr><td>CUT 1</td><td>青い沖縄の海・空撮ロングショット <span class="badge-must">必須</span></td><td>MP4 4K or 4K写真</td><td>Instagram or AI生成補完</td></tr>
-        <tr><td>CUT 2</td><td>フライボード打ち上げ動画（スロー素材があれば最高） <span class="badge-must">必須</span></td><td>MP4 1080p以上</td><td>クライアント素材</td></tr>
-        <tr><td>CUT 3</td><td>ホバーボード／ウェイクボード走行中の動画 <span class="badge-must">必須</span></td><td>MP4 1080p以上</td><td>クライアント素材</td></tr>
-        <tr><td>CUT 4</td><td>シュノーケル水中映像（魚・サンゴ・差し込む光） <span class="badge-must">必須</span></td><td>MP4 1080p以上</td><td>クライアント素材 / Instagram</td></tr>
-        <tr><td>CUT 5</td><td>BBQ風景 ＋ 夕日に染まる海 <span class="badge-must">必須</span></td><td>MP4 or 写真</td><td>クライアント素材</td></tr>
-        <tr><td>CUT 6</td><td>スタッフ集合 or ハイタッチ笑顔 <span class="badge-must">必須</span></td><td>MP4 or 写真</td><td>クライアント素材（要追加撮影の可能性）</td></tr>
-        <tr><td>CUT 7</td><td>CORAL SEA ロゴデータ <span class="badge-must">必須</span></td><td>AI / SVG / PNG透過</td><td>クライアント支給</td></tr>
-        <tr><td>CUT 7</td><td>HP予約ページQR / 電話番号 / 3店舗住所 <span class="badge-must">必須</span></td><td>テキスト</td><td>確定済み（HP掲載情報）</td></tr>
+        <tr><td>CUT 2</td><td>フライボード打ち上げ動画 <span class="badge-must">必須</span></td><td>MP4 1080p以上</td><td>クライアント素材</td></tr>
+        <tr><td>CUT 3</td><td>ホバーボード／ウェイクボード走行中 <span class="badge-must">必須</span></td><td>MP4 1080p以上</td><td>クライアント素材</td></tr>
+        <tr><td>CUT 4</td><td>シュノーケル水中映像（魚・サンゴ・光） <span class="badge-must">必須</span></td><td>MP4 1080p以上</td><td>クライアント素材 / Instagram</td></tr>
+        <tr><td>CUT 5</td><td>子ども・家族・カップルの体験笑顔（3カット必要） <span class="badge-must">必須</span></td><td>MP4 or 写真</td><td>クライアント素材</td></tr>
+        <tr><td>CUT 6</td><td>スタッフ集合 or ハイタッチ笑顔 <span class="badge-must">必須</span></td><td>MP4 or 写真</td><td>クライアント素材</td></tr>
+        <tr style="background:#fff7e6 !important;"><td>CUT 7</td><td><strong>GoPro撮影データ受け渡しシーン</strong> <span class="badge-must">必須</span> <span class="badge-win">差別化</span></td><td>MP4</td><td>★要追加撮影の可能性大</td></tr>
+        <tr><td>CUT 8</td><td>CORAL SEA ロゴデータ <span class="badge-must">必須</span></td><td>AI / SVG / PNG透過</td><td>クライアント支給</td></tr>
+        <tr><td>CUT 8</td><td>HP予約QR / 電話 / 3店舗住所 <span class="badge-must">必須</span></td><td>テキスト</td><td>HP掲載情報</td></tr>
       </tbody>
     </table>
 
@@ -501,9 +536,9 @@
       <tbody>
         <tr><td>CUT 1</td><td>ドローン空撮（沖縄ビーチを上空から） <span class="badge-want">理想</span></td><td>MP4 4K</td><td>なければAIで補完可能</td></tr>
         <tr><td>CUT 2</td><td>フライボード超スロー（240fps以上） <span class="badge-want">理想</span></td><td>MP4</td><td>スローで尺が伸ばせる</td></tr>
-        <tr><td>CUT 5</td><td>サンセットタイムラプス <span class="badge-want">理想</span></td><td>MP4</td><td>チル感が劇的に上がる</td></tr>
-        <tr><td>CUT 6</td><td>個別スタッフのポートレート笑顔（複数） <span class="badge-want">理想</span></td><td>JPG / MP4</td><td>「個性豊かなメンバー」の表現に活用</td></tr>
-        <tr><td>全般</td><td>お客さまの感想インタビュー（短尺） <span class="badge-want">理想</span></td><td>MP4</td><td>第二弾動画の素材としても活用</td></tr>
+        <tr><td>CUT 5</td><td>子どもの初回成功ガッツポーズ <span class="badge-want">理想</span></td><td>MP4</td><td>感情ピークのカット</td></tr>
+        <tr><td>CUT 6</td><td>個別スタッフのポートレート笑顔（複数） <span class="badge-want">理想</span></td><td>JPG / MP4</td><td>個性訴求に活用</td></tr>
+        <tr><td>CUT 7</td><td>GoPro実映像のサンプル（チラ見せ用） <span class="badge-want">理想</span></td><td>MP4</td><td>「こんな映像が貰える」を見せる</td></tr>
       </tbody>
     </table>
 
@@ -511,8 +546,9 @@
     <table>
       <tbody>
         <tr><td><strong>素材入手時間</strong></td><td>ヒアリングシート備考に「素材を用意するのに多少時間が掛かる可能性」あり。スケジュールは余裕を持って組む。</td></tr>
-        <tr><td><strong>肖像権</strong></td><td>お客さま映り込み素材は使用前に書面許諾必須。クライアント側で取得済みか確認。</td></tr>
-        <tr><td><strong>Instagram転用</strong></td><td>公式Instagram (@coralsea_okinawa) からのピックアップは無料利用OKだが、お客さま映り込み投稿は要再確認。</td></tr>
+        <tr><td><strong>CUT 7 追加撮影</strong></td><td>「GoPro受け渡しシーン」は撮影されていない可能性高い。クライアントへ追加撮影 or 演出依頼が必要。最大の差別化要素のため絶対外せない。</td></tr>
+        <tr><td><strong>肖像権</strong></td><td>お客さま映り込み素材は使用前に書面許諾必須。特にCUT 5（子ども）は要注意。</td></tr>
+        <tr><td><strong>Instagram転用</strong></td><td>公式Instagram (@coralsea_okinawa) からのピックアップは利用OKだが、お客さま映り込み投稿は要再確認。</td></tr>
         <tr><td><strong>不足素材</strong></td><td>取得不可な素材はAI生成（Veo/Gemini）で補完。ただし「実在のお客さま」「特定スタッフ」は生成NG。</td></tr>
       </tbody>
     </table>
@@ -522,12 +558,13 @@
   <div class="next-steps">
     <h3>🚀 Next Steps</h3>
     <ol>
-      <li><strong>クライアント素材の収集依頼</strong> — 上記必須素材リストを元にギガファイル便で受領</li>
+      <li><strong>クライアントへ構成案＋競合分析の共有</strong> — 本ページURLをそのまま送付</li>
+      <li><strong>CUT 7「GoPro受け渡しシーン」の追加撮影可否を確認</strong> — 最大の差別化要素</li>
+      <li><strong>クライアント素材の収集依頼</strong> — 必須素材リストをギガファイル便で受領</li>
       <li><strong>Instagram投稿の利用OKカット選定</strong> — 営業＋クライアントで30投稿程度ピックアップ</li>
-      <li><strong>不足素材のAI生成補完</strong> — 空撮・水中・夕日などはVeo/Geminiで生成代替可</li>
-      <li><strong>ナレーション原稿＆BGM選定</strong> — テロップ7枚＋BGMトーン確定</li>
-      <li><strong>初稿動画制作（30秒メイン）</strong> — Premiere Proで編集</li>
-      <li><strong>クライアント確認 → リテイク → 6秒/15秒派生版作成</strong></li>
+      <li><strong>不足素材のAI生成補完判断</strong> — 空撮・水中などはVeo/Geminiで生成代替可</li>
+      <li><strong>ナレーション原稿＆BGM選定</strong> — テロップ8枚＋BGMトーン確定</li>
+      <li><strong>初稿動画制作（30秒メイン）</strong> → リテイク → 6秒/15秒派生版</li>
     </ol>
   </div>
 
@@ -535,7 +572,7 @@
 
 <footer>
   株式会社ランバード｜AI動画事業｜CORAL SEA / 株式会社MLO 案件用<br>
-  最終更新: 2026-05-02
+  最終更新: 2026-05-02 ／ B+A統合版＋競合分析追加
 </footer>
 
 </body>
